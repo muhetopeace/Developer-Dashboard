@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Loading from './Loading'
 import ErrorCard from './ErrorCard'
 
@@ -55,8 +55,12 @@ export default function WeatherCard({ defaultCity }: WeatherCardProps): JSX.Elem
   const [error, setError] = useState<string | null>(null)
   const [weather, setWeather] = useState<CurrentWeather | null>(null)
   const [resolvedName, setResolvedName] = useState<string>(defaultCity)
+  const [now, setNow] = useState<Date>(new Date())
 
-  const now = useMemo(() => new Date(), [weather])
+  useEffect(() => {
+    const t = setInterval(() => setNow(new Date()), 1000)
+    return () => clearInterval(t)
+  }, [])
 
   useEffect(() => {
     let cancelled = false
