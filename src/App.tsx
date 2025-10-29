@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import GitHubCard from './components/GitHubCard'
 import WeatherCard from './components/WeatherCard'
-import { loadInitialTheme } from './utils/theme'
+import { loadInitialTheme } from '../utils/theme'
 
 export default function App(): JSX.Element {
   const [theme, setTheme] = useState<'light' | 'dark'>(loadInitialTheme())
