@@ -1,18 +1,78 @@
-# React + Vite
+# Developer Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple developer dashboard showcasing:
 
-Currently, two official plugins are available:
+- GitHub profile stats (avatar, repos, followers, following)
+- Current weather by city (temperature, condition, wind, current time)
+- Light/Dark mode toggle with persistence
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## React Compiler
+- React + TypeScript + Vite
+- Tailwind CSS
+- Fetch API
+- Open APIs:
+  - GitHub Users API
+  - Open-Meteo Geocoding + Weather APIs (no API key required)
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Screenshots
 
-Note: This will impact Vite dev & build performances.
+(Add your screenshot here)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+- Node 18+
+
+### Setup
+
+```bash
+npm install
+npm run dev
+```
+
+Then open the printed local URL.
+
+## Configuration
+
+- Default GitHub username is set to `octocat` in `src/App.tsx`.
+- Default city is `San Francisco`. You can change both in `src/App.tsx`.
+
+## Folder Structure
+
+```
+developer-dashboard/
+  index.html
+  package.json
+  postcss.config.cjs
+  tailwind.config.js
+  tsconfig.json
+  src/
+    index.css
+    main.tsx
+    App.tsx
+    components/
+      Navbar.tsx
+      GitHubCard.tsx
+      WeatherCard.tsx
+      Loading.tsx
+      ErrorCard.tsx
+    utils/
+      theme.ts
+```
+
+## Deployment
+
+You can deploy to a static host (Vercel, Netlify, GitHub Pages). Build and upload the `dist` folder.
+
+```bash
+npm run build
+```
+
+## Commit Suggestions
+
+- Added GitHub API integration
+- Implemented Light/Dark mode toggle
+- Styled dashboard cards with Tailwind CSS
+
+
